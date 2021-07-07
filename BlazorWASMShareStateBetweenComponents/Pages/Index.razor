@@ -1,0 +1,19 @@
+﻿@page "/"
+
+@inject Services.IShareStateService ShareStateService
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@if (ShareStateService.Data != "")
+{
+    <h2>
+        Selected Country:
+        <span style="color:forestgreen; font-weight:800">
+            @ShareStateService.Data
+        </span>
+    </h2>
+}
